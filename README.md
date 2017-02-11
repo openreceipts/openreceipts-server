@@ -1,6 +1,8 @@
 
 <h1>What is Open Receipts ?</h1>
-<img src="docs/OpenReceiptsTitle.jpg" width="80%">
+<img src="docs/OpenReceiptsTitle.jpg" width="80%"><br>
+Open Receipts is an open source web app to free your food receipts by creating Open Data using text recognition and APIs like Open Food or Open Food Facts.
+
 <img src="docs/SadBasket.png" width="80%">
 <img src="docs/HappyBasket.png" width="80%">
 <img src="docs/Result.png" width="80%">
