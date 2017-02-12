@@ -16,6 +16,12 @@ Open Receipts is an open source web app to free your food receipts by creating O
   <li>Gets the prices from a food receipt</li>
 </ul>
 
+<h1>General Roadmap</h1>
+<ul>
+<li>Make it translatable</li>
+<li>Make it installable (eg Heroku)</li>
+</ul>
+
 <h1>Upload Roadmap</h1>
 <ul>
   <li>Crowdsourcing matches between abbreviation and barcode</li>
@@ -34,4 +40,5 @@ Open Receipts is an open source web app to free your food receipts by creating O
   <li>Reproduce the receipt with CSS</li>
   <li>Repartition of nutrients over time (3 lines)</li>
   <li>Price by calorie (scatter plot)</li>
+  <li>Be able to export the anonymized data to a centralized repo</li>
 </ul>
