@@ -15,7 +15,8 @@ networkx==1.11
 numpy==1.12.0
 oauth2client==4.0.0
 olefile==0.44
-opencv-python==3.2.0
+#opencv-python==3.2.0
+opencv-python
 packaging==16.8
 Pillow==4.0.0
 pyasn1==0.2.2
