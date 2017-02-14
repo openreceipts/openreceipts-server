@@ -31,3 +31,4 @@ six==1.10.0
 standardjson==0.3.1
 toolz==0.8.2
 uritemplate==3.0.0
+psycopg2
