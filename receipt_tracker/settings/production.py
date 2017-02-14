@@ -5,6 +5,10 @@ import dj_database_url
 #DATABASE_URL = ''
 from .base import *
 
+SECRET_KEY = os.environ['SECRET_KEY']
+DATABASE_URL = os.environ['DATABASE_URL']
+GOOGLE_API_KEY = os.environ['GOOGLE_API_KEY']
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
