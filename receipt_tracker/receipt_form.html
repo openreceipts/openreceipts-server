@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block HEAD_END %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.13/css/jquery.Jcrop.min.css"
+          integrity="sha256-AmgZt7rCRkhza/RdxOdjwHYsDn5w9dL2Zd8O4xaNYd8=" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block CONTENT %}
+    {% crispy form %}
+{% endblock %}
+
+
+{% block ENDBODY %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.13/js/jquery.Jcrop.min.js"
+            integrity="sha256-9xVycEhsm5hytRlj01uFexP5eAW2GNdDJgJTpZSrYHY=" crossorigin="anonymous"></script>
+    <script>
+
+        //$("#div_").remove();
+
+        var crop_max_width = 300;
+        var crop_max_height = 300;
+        var jcrop_api;
+        var canvas;
+        var context;
+        var image;
+
+        var prefsize;
+
+        $("#id_image").change(function () {
+            loadImage(this);
+        });
+
+        function loadImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                canvas = null;
+                reader.onload = function (e) {
+                    image = new Image();
+                    image.onload = validateImage;
+                    image.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        function validateImage() {
+            if (canvas != null) {
+                image = new Image();
+                image.onload = restartJcrop;
+                image.src = canvas.toDataURL('image/png');
+            } else restartJcrop();
+        }
+
+        function restartJcrop() {
+            if (jcrop_api != null) {
+                jcrop_api.destroy();
+            }
+            $("#views").empty();
+            $("#views").append("<canvas id=\"canvas\">");
+            canvas = $("#canvas")[0];
+            context = canvas.getContext("2d");
+            canvas.width = image.width;
+            canvas.height = image.height;
+            context.drawImage(image, 0, 0);
+            $("#canvas").Jcrop({
+                onSelect: selectcanvas,
+                onRelease: clearcanvas,
+                boxWidth: crop_max_width,
+                boxHeight: crop_max_height
+            }, function () {
+                jcrop_api = this;
+            });
+            clearcanvas();
+        }
+
+        function clearcanvas() {
+            prefsize = {
+                x: 0,
+                y: 0,
+                w: canvas.width,
+                h: canvas.height,
+            };
+        }
+
+        function selectcanvas(coords) {
+            prefsize = {
+                x: Math.round(coords.x),
+                y: Math.round(coords.y),
+                w: Math.round(coords.w),
+                h: Math.round(coords.h)
+            };
+        }
+
+        function applyCrop() {
+            canvas.width = prefsize.w;
+            canvas.height = prefsize.h;
+            context.drawImage(image, prefsize.x, prefsize.y, prefsize.w, prefsize.h, 0, 0, canvas.width, canvas.height);
+            validateImage();
+        }
+
+        function applyRotate(angle) {
+            /* Math.PI / 2 */
+            canvas.width = image.height;
+            canvas.height = image.width;
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.translate(image.height / 2, image.width / 2);
+            context.rotate(angle);
+            context.drawImage(image, -image.width / 2, -image.height / 2);
+            validateImage();
+        }
+
+        $("#cropbutton").click(function (e) {
+            applyCrop();
+        });
+
+        $("#rotatebuttonRight").click(function (e) {
+            applyRotate(Math.PI / 2);
+        });
+
+        $("#rotatebuttonLeft").click(function (e) {
+            applyRotate(-Math.PI / 2);
+        });
+
+        $("#image_upload_form").submit(function (e) {
+            //var blob = dataURLtoBlob(canvas.toDataURL('image/png'));
+            //---Add file blob to the form data
+            //formData.append("cropped_image[]", blob);
+            $('#id_cropped_image')
+                .attr('value', canvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', ''))
+
+            console.log("clicked!");
+        });
+    </script>
+{% endblock %}
