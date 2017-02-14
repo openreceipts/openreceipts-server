@@ -33,3 +33,4 @@ toolz==0.8.2
 uritemplate==3.0.0
 psycopg2
 gunicorn
+dj-database-url
