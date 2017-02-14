@@ -5,7 +5,9 @@ import requests
 import cv2
 import numpy as np
 
-from receipt_tracker.settings import GOOGLE_API_KEY
+#from receipt_tracker.settings import GOOGLE_API_KEY
+import os
+GOOGLE_API_KEY = os.environ['GOOGLE_API_KEY']
 
 ENDPOINT_URL = 'https://vision.googleapis.com/v1/images:annotate'
 API_KEY = GOOGLE_API_KEY
