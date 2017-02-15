@@ -29,7 +29,7 @@ MEDIA_URL = '/media/'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
