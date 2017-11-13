@@ -137,7 +137,7 @@ MEDIA_ROOT = "https://s3.amazonaws.com/openreceiptsorg/media/"
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'https://s3.amazonaws.com/openreceiptsorg/media/'
 
-
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 GOOGLE_API_KEY = env('GOOGLE_API_KEY')
