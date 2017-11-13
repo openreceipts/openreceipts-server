@@ -125,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = ''
+STATIC_URL = 'https://s3.amazonaws.com/openreceiptsorg/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = "https://s3.amazonaws.com/openreceiptsorg/static/"
 
@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = "https://s3.amazonaws.com/openreceiptsorg/media/"
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = ''
+MEDIA_URL = 'https://s3.amazonaws.com/openreceiptsorg/media/'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
