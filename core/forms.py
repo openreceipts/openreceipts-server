@@ -4,11 +4,12 @@ from crispy_forms.layout import Layout, Fieldset, Submit, Div, HTML
 from django import forms
 
 from .models import ReceiptScan
-
+from s3direct.widgets import S3DirectWidget
+    
 
 class ReceiptScanForm(forms.ModelForm):
     cropped_image = forms.CharField(max_length=999999999999999999, required=False)
-
+    #cropped_image = forms.URLField(widget=S3DirectWidget(dest='example_destination'))
     class Meta:
         model = ReceiptScan
         fields = ('image', 'cropped_image',)
