@@ -133,7 +133,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_files"),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = "https://s3.amazonaws.com/openreceiptsorg/"
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
