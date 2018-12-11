@@ -6,7 +6,7 @@ Open Receipts is an open source web app to free your food receipts by creating O
 <img src="docs/SadBasket.png" width="80%">
 <img src="docs/HappyBasket.png" width="80%">
 <img src="docs/Result.png" width="80%">
-   
+
 <h1>How does it work ?</h1>
 <img src="docs/OpenReceiptsHowDoesItWork.jpg" width="80%">
 
@@ -42,3 +42,17 @@ Open Receipts is an open source web app to free your food receipts by creating O
   <li>Price by calorie (scatter plot)</li>
   <li>Be able to export the anonymized data to a centralized repo</li>
 </ul>
+
+# Instructions
+
+1. Get a Google developer account and enable [Cloud Vision API](https://console.cloud.google.com/apis/api/vision.googleapis.com/overview)
+
+2. Generate a credential key and export it to your environment
+
+`export GOOGLE_API_KEY=abcdef`
+
+3. Set up a virtual environment, install via pip, then
+
+`python manage.py migrate`
+
+`python manage.py runserver`
