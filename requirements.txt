@@ -2,7 +2,7 @@ appdirs==1.4.0
 cycler==0.10.0
 dask==0.13.0
 decorator==4.0.11
-Django==1.10.5
+Django==1.10.7
 django-crispy-forms==1.6.1
 django-environ==0.4.1
 django-flat-responsive==1.2.0
@@ -20,7 +20,7 @@ pyasn1-modules==0.0.8
 pyparsing==2.1.10
 python-dateutil==2.6.0
 pytz==2016.10
-requests==2.13.0
+requests==2.20.0
 rsa==3.4.2
 scikit-image==0.12.3
 six==1.10.0
