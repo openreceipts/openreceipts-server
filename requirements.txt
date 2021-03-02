@@ -14,7 +14,7 @@ networkx==1.11
 oauth2client==4.0.0
 olefile==0.44
 packaging==16.8
-Pillow==6.2.0
+Pillow==8.1.1
 pyasn1==0.2.2
 pyasn1-modules==0.0.8
 pyparsing==2.1.10
