@@ -1,4 +1,4 @@
-appdirs==1.4.0
+appdirs==1.4.4
 cycler==0.10.0
 dask==0.13.0
 decorator==4.0.11
