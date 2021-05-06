@@ -10,14 +10,14 @@ django-model-utils==2.6.1
 google-api-python-client==1.6.2
 httplib2==0.10.3
 matplotlib==2.0.0
-networkx==1.11
+networkx==2.5.1
 oauth2client==4.0.0
 olefile==0.46
 packaging==16.8
 Pillow==6.2.0
 pyasn1==0.2.2
 pyasn1-modules==0.0.8
-pyparsing==2.1.10
+pyparsing==2.4.7
 python-dateutil==2.6.0
 pytz==2021.1
 requests==2.25.0
