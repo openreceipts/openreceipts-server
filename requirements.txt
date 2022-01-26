@@ -3,7 +3,7 @@ cycler==0.10.0
 dask==2021.9.1
 decorator==4.0.11
 Django==1.11.29
-django-crispy-forms==1.6.1
+django-crispy-forms==1.14.0
 django-environ==0.4.1
 django-flat-responsive==1.2.0
 django-model-utils==2.6.1
