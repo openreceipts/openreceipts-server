@@ -2,7 +2,7 @@ appdirs==1.4.4
 cycler==0.10.0
 dask==2021.9.1
 decorator==4.0.11
-Django==1.11.29
+Django==4.0.3
 django-crispy-forms==1.6.1
 django-environ==0.4.1
 django-flat-responsive==1.2.0
