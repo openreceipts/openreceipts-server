@@ -30,8 +30,8 @@ uritemplate==3.0.0
 #changed for production
 #opencv-python==3.2.0
 opencv-python
-#numpy==1.21.0+mkl
-numpy==1.21.0
+#numpy==1.23.2+mkl
+numpy==1.23.2
 #requirements for production
 psycopg2
 gunicorn
